@@ -11,6 +11,7 @@ REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
 
 TEMPLATE="${REPO_ROOT}/templates/qbftConfigFile.json"
 PRIVATE_DIR="${REPO_ROOT}/private"
+DIRECCIONES_DIR="${PRIVATE_DIR}/direcciones"
 OUTPUT="${PRIVATE_DIR}/qbftConfigFile.json"
 
 BALANCE="90000000000000000000000"
@@ -29,8 +30,8 @@ fi
 # Partir de la plantilla (con alloc vacío)
 cp "${TEMPLATE}" "${OUTPUT}"
 
-# Recorrer subdirectorios de private/
-for dir in "${PRIVATE_DIR}"/*/; do
+# Recorrer subdirectorios de private/direcciones/
+for dir in "${DIRECCIONES_DIR}"/*/; do
     # Ignorar si no es un directorio real
     [[ -d "${dir}" ]] || continue
 
