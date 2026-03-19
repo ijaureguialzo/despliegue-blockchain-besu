@@ -6,6 +6,7 @@ help: _header
 	@echo -----------------------
 	@echo direcciones
 	@echo qbft_config
+	@echo generar_config_besu
 	@echo -----------------------
 
 _header:
@@ -20,3 +21,6 @@ direcciones:
 
 qbft_config:
 	@scripts/generar_qbft_config
+
+generar_config_besu:
+	@besu operator generate-blockchain-config --config-file=private/qbftConfigFile.json --to=private/networkFiles --private-key-file-name=key
