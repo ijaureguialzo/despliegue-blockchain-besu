@@ -15,8 +15,6 @@ if [[ ! -d "${KEYS_DIR}" ]]; then
     exit 1
 fi
 
-NOMBRE_RED="2nodeNetwork"
-
 counter=1
 
 # Ordenar subdirectorios con nombre 0x... para garantizar orden determinista
@@ -28,7 +26,7 @@ for dir in $(find "${KEYS_DIR}" -mindepth 1 -maxdepth 1 -type d -name "0x*" | so
         continue
     fi
 
-    touch "${dir}/${NOMBRE_RED}_${counter}"
+    touch "${dir}/${counter}"
 
     dest="${KEYS_DIR}/key${counter}"
     cp "${key_file}" "${dest}"
