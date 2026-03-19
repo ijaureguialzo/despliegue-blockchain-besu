@@ -9,6 +9,7 @@ help: _header
 	@echo direcciones
 	@echo qbft_config
 	@echo generar_config_besu
+	@echo numerar_claves
 	@echo clean
 	@echo -----------------------
 
@@ -28,7 +29,10 @@ qbft_config:
 generar_config_besu:
 	@besu operator generate-blockchain-config --config-file=private/qbftConfigFile.json --to=private/networkFiles --private-key-file-name=key
 
-blockchain: clean direcciones qbft_config generar_config_besu
+blockchain: clean direcciones qbft_config generar_config_besu numerar_claves
 
 clean:
 	@rm -rf private/* && touch private/.gitkeep
+
+numerar_claves:
+	@scripts/numerar_claves
