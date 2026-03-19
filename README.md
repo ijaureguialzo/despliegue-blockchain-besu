@@ -6,7 +6,7 @@ Despliegue de una Blockchain Besu para el curso de Tknika.
 
 ```
 brew tap hyperledger/besu
-brew install hyperledger/besu/besu websocat ansible python
+brew install hyperledger/besu/besu websocat ansible python jq
 ```
 
 ## Referencias
