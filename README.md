@@ -14,3 +14,4 @@ brew install hyperledger/besu/besu websocat ansible python
 - [Install binary distribution | Besu documentation](https://besu.hyperledger.org/private-networks/get-started/install/binary-distribution)
 - [Create a QBFT network | Besu documentation](https://besu.hyperledger.org/private-networks/tutorials/qbft)
 - [vi/websocat: Command-line client for WebSockets, like netcat (or curl) for ws:// with advanced socat-like functions](https://github.com/vi/websocat)
+- [Genesis file](https://besu.hyperledger.org/private-networks/how-to/configure/consensus/qbft#genesis-file)
