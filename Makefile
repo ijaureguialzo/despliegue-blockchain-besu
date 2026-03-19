@@ -12,6 +12,7 @@ help: _header
 	@echo numerar_claves
 	@echo generar_jwts
 	@echo generar_allow_list
+	@echo generar_nodes_allow_list
 	@echo clean
 	@echo -----------------------
 
@@ -46,3 +47,6 @@ generar_jwts:
 
 generar_allow_list:
 	@scripts/generar_allow_list
+
+generar_nodes_allow_list:
+	@scripts/generar_nodes_allowlist
