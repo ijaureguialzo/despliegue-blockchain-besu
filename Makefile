@@ -11,8 +11,8 @@ help: _header
 	@echo generar_config_besu
 	@echo numerar_claves
 	@echo generar_jwts
-	@echo generar_allow_list
-	@echo generar_nodes_allow_list
+	@echo generar_accounts_allowlist
+	@echo generar_nodes_allowlist
 	@echo clean
 	@echo -----------------------
 
@@ -32,7 +32,7 @@ qbft_config:
 generar_config_besu:
 	@besu operator generate-blockchain-config --config-file=private/qbftConfigFile.json --to=private/networkFiles --private-key-file-name=key
 
-blockchain: clean direcciones qbft_config generar_config_besu numerar_claves generar_jwts generar_allow_list
+blockchain: clean direcciones qbft_config generar_config_besu numerar_claves generar_jwts generar_accounts_allowlist generar_nodes_allowlist
 
 clean:
 	@rm -rf private/* && touch private/.gitkeep
@@ -45,8 +45,8 @@ generar_jwts:
 	@cd private/jwts && poetry run python ../../scripts/sortu_JWT.py 1
 	@cd private/jwts && poetry run python ../../scripts/sortu_JWT.py 2
 
-generar_allow_list:
-	@scripts/generar_allow_list
+generar_accounts_allowlist:
+	@scripts/generar_accounts_allowlist
 
-generar_nodes_allow_list:
+generar_nodes_allowlist:
 	@scripts/generar_nodes_allowlist
