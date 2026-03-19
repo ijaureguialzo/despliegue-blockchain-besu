@@ -1,5 +1,7 @@
 #!make
 
+nodo=1
+
 help: _header
 	${info }
 	@echo Opciones:
@@ -14,6 +16,9 @@ help: _header
 	@echo generar_accounts_allowlist
 	@echo generar_nodes_allowlist
 	@echo generar_static_nodes
+	@echo -----------------------
+	@echo mostrar_websocat [nodo=1]
+	@echo -----------------------
 	@echo clean
 	@echo -----------------------
 
@@ -54,3 +59,6 @@ generar_nodes_allowlist:
 
 generar_static_nodes:
 	@scripts/generar_static_nodes
+
+mostrar_websocat:
+	@scripts/mostrar_websocat $(nodo)
