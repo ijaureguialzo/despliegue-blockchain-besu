@@ -13,6 +13,7 @@ help: _header
 	@echo generar_jwts
 	@echo generar_accounts_allowlist
 	@echo generar_nodes_allowlist
+	@echo generar_static_nodes
 	@echo clean
 	@echo -----------------------
 
@@ -32,7 +33,7 @@ qbft_config:
 generar_config_besu:
 	@besu operator generate-blockchain-config --config-file=private/qbftConfigFile.json --to=private/networkFiles --private-key-file-name=key
 
-blockchain: clean direcciones qbft_config generar_config_besu numerar_claves generar_jwts generar_accounts_allowlist generar_nodes_allowlist
+blockchain: clean direcciones qbft_config generar_config_besu numerar_claves generar_jwts generar_accounts_allowlist generar_nodes_allowlist generar_static_nodes
 
 clean:
 	@rm -rf private/* && touch private/.gitkeep
@@ -50,3 +51,6 @@ generar_accounts_allowlist:
 
 generar_nodes_allowlist:
 	@scripts/generar_nodes_allowlist
+
+generar_static_nodes:
+	@scripts/generar_static_nodes
